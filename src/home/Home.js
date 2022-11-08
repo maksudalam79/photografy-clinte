@@ -8,7 +8,7 @@ import img6 from "../other/tamara-bellis-IwVRO3TLjLc-unsplash.jpg";
 
 import "./Banner.css";
 import BannerItem from "../banner/BannerItem";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Services from "../services/Services";
 
 const bannarData=[

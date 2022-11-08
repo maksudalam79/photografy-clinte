@@ -5,7 +5,7 @@ import img from '../other/camera-logo-cliparts-30.png'
 const Navbar = () => {
     const menuItem=<>
     <li><Link to='/'>Home</Link></li>
-    <li><Link>Log in</Link></li>
+    <li><Link to='/login'>Log in</Link></li>
     </>
     return (
         <div className="navbar">

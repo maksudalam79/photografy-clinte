@@ -3,18 +3,18 @@ import { useLoaderData } from 'react-router-dom';
 
 
 const Deatails = () => {
-    const {facility}=useLoaderData()
-    console.log(facility)
+    
+  const {title,img,description}=useLoaderData()
    
     return (
-        <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-items-center gap-3'>
-           {
-            facility.map(fac=><div>
-            <img className='w-full h-60 m-5' src={fac.img} alt="" />
-            </div>
-            )
-           }
+        <div className="card w-96 bg-base-100 shadow-xl mx-auto">
+        <figure><img src={img} alt="Shoes" /></figure>
+        <div className="card-body">
+          <h2 className="card-title">{title}</h2>
+          <p>{description}</p>
+          
         </div>
+      </div>
     );
 };
 

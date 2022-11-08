@@ -2,7 +2,7 @@ import React from "react";
 
 const Service = ({ service }) => {
   console.log(service);
-  const { title, img,description } = service;
+  const { title, img, description } = service;
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
@@ -10,12 +10,7 @@ const Service = ({ service }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
-       <p> {description.length>200?
-        <p>{description.slice(0,100)+'...'}</p>
-        :
-        <p>{description}</p>
-        }
-        </p>
+        <p> {description.slice(0, 100) + "..."}</p>
       </div>
     </div>
   );
