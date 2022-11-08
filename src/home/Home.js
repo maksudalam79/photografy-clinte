@@ -8,6 +8,8 @@ import img6 from "../other/tamara-bellis-IwVRO3TLjLc-unsplash.jpg";
 
 import "./Banner.css";
 import BannerItem from "../banner/BannerItem";
+import { Link, useLoaderData } from "react-router-dom";
+import Services from "../services/Services";
 
 const bannarData=[
     {
@@ -61,8 +63,11 @@ const bannarData=[
  
 
 const Home = () => {
+    
+    
   return (
-    <div className="carousel w-full rounded-lg">
+    <div>
+        <div className="carousel w-full rounded-lg">
       {
         bannarData.map(bannar=><BannerItem
         key={bannar.id}
@@ -70,6 +75,11 @@ const Home = () => {
         ></BannerItem>)
       }
      
+    </div>
+    <div>
+        <Services></Services>
+        <Link to='/allservice'><button className="btn btn-ghost mb-2">See All</button></Link>
+    </div>
     </div>
 
   );
