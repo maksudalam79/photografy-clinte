@@ -9,6 +9,7 @@ import Main from "../main/Main";
 import Registration from "../registration/Registration";
 import Allreview from "../review/Allreview";
 import Myreview from "../review/Myreview";
+import Private from "./Private";
 
 export const router=createBrowserRouter([
 {
@@ -26,7 +27,7 @@ export const router=createBrowserRouter([
         },
         {
             path:'/allservice/:id',
-            element:<Deatails></Deatails>,
+            element:<Private><Deatails></Deatails></Private>,
             loader:({params})=>fetch(`http://localhost:5000/allservice/${params.id}`)
         },
         {

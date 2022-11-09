@@ -61,8 +61,8 @@ const handlerReview=(event)=>{
         user?.email?
         <input className="btn" type="submit" value="Review" />
         :
-        <Link to='/registration'>
-            <button className="btn btn-accent">Registration</button>
+        <Link to='/login'>
+            <button className="btn btn-accent">Login</button>
         </Link>
        }
         </form>

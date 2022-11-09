@@ -1,11 +1,12 @@
 import { GoogleAuthProvider } from 'firebase/auth';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
 const Login = () => {
-    const { providerLogin, signIn, providerGithub } = useContext(AuthContext);
+    const {user, providerLogin, signIn} = useContext(AuthContext);
+    console.log(user)
     const [error, setError] = useState("");
    
     const googleProvider = new GoogleAuthProvider();
@@ -42,6 +43,11 @@ const Login = () => {
           setError(error.message);
         });
     };
+    useEffect(()=>{
+      if(user?.uid){
+        navigate(from,{ replace: true });
+      }
+    },[])
    
     return (
         <div className="hero min-h-screen bg-base-200">

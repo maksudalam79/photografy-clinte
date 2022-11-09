@@ -29,7 +29,8 @@ user?.email?
 :
 <li><Link to='/login'>Log in</Link></li>
     }
-    
+      <img className="w-10 rounded-full ml-5" src={user?.photoURL} alt="" />
+      <p>{user?.displayNam}</p>
     </>
 
    
@@ -54,8 +55,8 @@ user?.email?
           </ul>
         </div>
         <div className="navbar-end">
-        <div className="w-10 rounded-full">
-          <img src={img} alt="" />
+        <div>
+       
         </div>
         </div>
       </div>
