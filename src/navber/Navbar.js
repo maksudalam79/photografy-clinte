@@ -1,12 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 import img from '../other/camera-logo-cliparts-30.png'
 
 const Navbar = () => {
+    const {user,logOut}=useContext(AuthContext)
+    const handlarLogOut=()=>{
+        logOut()
+        .then (()=>{})
+        .catch(error=>
+            {
+                console.error(error)
+            })
+    }
     const menuItem=<>
     <li><Link to='/'>Home</Link></li>
-    <li><Link to='/login'>Log in</Link></li>
+    
+    <li><Link to='/reviews'>All Review</Link></li>
+    {
+user?.email?
+<>
+<li><Link to='/review'>My Review</Link></li>
+<button onClick={handlarLogOut}>Logout</button>
+</>
+
+:
+<li><Link to='/login'>Log in</Link></li>
+    }
+    
     </>
+
+   
+
     return (
         <div className="navbar">
         <div className="navbar-start">

@@ -13,7 +13,7 @@ const handlerReview=(event)=>{
     const massage=from.massage.value
 
     const review={
-        uid:user?.uid,
+        email:user?.email,
         reviewName:title,
         massage
     }

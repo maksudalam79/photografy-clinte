@@ -5,6 +5,8 @@ import Home from "../home/Home";
 import Login from "../login/Login";
 import Main from "../main/Main";
 import Registration from "../registration/Registration";
+import Allreview from "../review/Allreview";
+import Myreview from "../review/Myreview";
 
 export const router=createBrowserRouter([
 {
@@ -32,7 +34,17 @@ export const router=createBrowserRouter([
         {
             path:'/registration',
             element:<Registration></Registration>
+        },
+        {
+            path:'/review',
+            element:<Myreview></Myreview>
+        },
+        {
+            path:'/reviews',
+            element:<Allreview></Allreview>,
+            loader:()=>fetch('http://localhost:5000/reviews')
         }
+
       
        
     ]
