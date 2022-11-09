@@ -18,7 +18,7 @@ const Addservice = () => {
             description
         }
 
-    fetch('http://localhost:5000/allservice',{
+    fetch('http://localhost:5000/services',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -36,7 +36,7 @@ const Addservice = () => {
     }
     return (
        
-            <div>
+            <div className='my-5'>
                 <h2 className='text-5xl'>Add Something If you want!!!</h2>
                 <form onSubmit={handlerAddService}>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 m-3 '>
