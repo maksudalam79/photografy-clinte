@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 const Deatails = () => {
@@ -57,7 +57,14 @@ const handlerReview=(event)=>{
         <input name="email" type="text" placeholder="Email" defaultValue={user?.email} className="input input-bordered w-full "readOnly />
         <input name="massage" type="text" placeholder="Your massage" className="input input-bordered w-full "required />
        </div>
-       <input className="btn" type="submit" value="Review" />
+       {
+        user?.email?
+        <input className="btn" type="submit" value="Review" />
+        :
+        <Link to='/registration'>
+            <button className="btn btn-accent">Registration</button>
+        </Link>
+       }
         </form>
        
       </div>

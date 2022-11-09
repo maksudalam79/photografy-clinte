@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
+import Addservice from "../allservice/Addservice";
 import Allservice from "../allservice/Allservice";
+import Blog from "../blog/Blog";
 import Deatails from "../details/Deatails";
 import Home from "../home/Home";
 import Login from "../login/Login";
@@ -43,6 +45,14 @@ export const router=createBrowserRouter([
             path:'/reviews',
             element:<Allreview></Allreview>,
             loader:()=>fetch('http://localhost:5000/reviews')
+        },
+        {
+            path:'/addservice',
+            element:<Addservice></Addservice>
+        },
+        {
+            path:'/blog',
+            element:<Blog></Blog>
         }
 
       
