@@ -27,7 +27,7 @@ const Review = ({ review,handlerDelete }) => {
       </td>
       <td>{massage}</td>
       <th>
-        <Link to={`/edit/${_id}`}><button className="btn btn-ghost btn-xs">Edit</button></Link>
+        <Link to={`/reviews/${_id}`}><button className="btn btn-ghost btn-xs">Edit</button></Link>
       </th>
     </tr>
   );
