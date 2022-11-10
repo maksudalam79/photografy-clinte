@@ -27,6 +27,7 @@ const AuthProvider = ({children}) => {
         return signInWithEmailAndPassword(auth,email,password)
     }
     const logOut=()=>{
+        localStorage.removeItem('photoToken')
         return signOut(auth)
     }
 

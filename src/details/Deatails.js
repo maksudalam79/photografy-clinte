@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import Allreview from "../review/Allreview";
+import 'react-photo-view/dist/react-photo-view.css';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+
+
 import ReviewAll from "../review/ReviewAll";
 
 
@@ -54,7 +57,11 @@ const handlerReview=(event)=>{
     <div>
       <div className="card w-96 bg-base-100 shadow-xl mx-auto">
         <figure>
-          <img src={img} alt="Shoes" />
+        <PhotoProvider>
+      <PhotoView src={img}>
+        <img src={img} alt="" />
+      </PhotoView>
+    </PhotoProvider>
         </figure>
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
