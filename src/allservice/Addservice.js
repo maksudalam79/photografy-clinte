@@ -29,6 +29,9 @@ const Addservice = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
+            from.reset()
+            window.confirm('add your service')
+
           
         })
         .catch(error=>console.error(error))
