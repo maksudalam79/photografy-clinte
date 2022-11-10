@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
+
 const Deatails = () => {
   const {_id, title, img, description } = useLoaderData();
   const {user}=useContext(AuthContext)
@@ -11,11 +12,17 @@ const handlerReview=(event)=>{
     event.preventDefault()
     const from=event.target
     const massage=from.massage.value
+    const photoUrl=from.photoUrl.value
+    
+    
 
     const review={
         email:user?.email,
         reviewName:title,
-        massage
+        massage,
+        photoUrl
+       
+        
     }
     fetch('http://localhost:5000/reviews',{
         method:'POST',
@@ -56,6 +63,7 @@ const handlerReview=(event)=>{
         <input name="photoUrl" type="text" placeholder="photoUrl"defaultValue={user?.photoURL}  className="input input-bordered w-full "readOnly />
         <input name="email" type="text" placeholder="Email" defaultValue={user?.email} className="input input-bordered w-full "readOnly />
         <input name="massage" type="text" placeholder="Your massage" className="input input-bordered w-full "required />
+        
        </div>
        {
         user?.email?

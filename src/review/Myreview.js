@@ -33,6 +33,7 @@ const Myreview = () => {
 
   }
 
+
   return (
     <div>
       <div className="overflow-x-auto w-full">
@@ -45,13 +46,13 @@ const Myreview = () => {
                 </label>
               </th>
               <th>Name</th>
-              <th>Email</th>
+              <th>Email & Photo</th>
               <th>Massage</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            {reviews.map((review) => (
+          {reviews.map((review) => (
               <Review 
               review={review}
               handlerDelete={handlerDelete}

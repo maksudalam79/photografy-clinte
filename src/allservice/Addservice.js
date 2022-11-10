@@ -1,4 +1,5 @@
 import React from 'react';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Addservice = () => {
     const handlerAddService=(event)=>{
@@ -28,7 +29,7 @@ const Addservice = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
-           
+          
         })
         .catch(error=>console.error(error))
     

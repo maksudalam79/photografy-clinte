@@ -1,9 +1,10 @@
 import React  from "react";
+import { Link } from "react-router-dom";
 
 const Review = ({ review,handlerDelete }) => {
-  const {_id, email, reviewName, massage } = review;
+  const {_id, email, reviewName, massage,photoUrl } = review;
 
-  
+ 
   
   return (
     <tr>
@@ -20,10 +21,13 @@ const Review = ({ review,handlerDelete }) => {
           </div>
         </div>
       </td>
-      <td>{email}</td>
+      <td>
+        <img className="w-10" src={photoUrl} alt="" />
+        <p>{email}</p>
+      </td>
       <td>{massage}</td>
       <th>
-        <button className="btn btn-ghost btn-xs"></button>
+        <Link to={`/edit/${_id}`}><button className="btn btn-ghost btn-xs">Edit</button></Link>
       </th>
     </tr>
   );
