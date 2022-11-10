@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import Allreview from "../review/Allreview";
+import ReviewAll from "../review/ReviewAll";
 
 
 const Deatails = () => {
@@ -13,6 +15,7 @@ const handlerReview=(event)=>{
     const from=event.target
     const massage=from.massage.value
     const photoUrl=from.photoUrl.value
+    const name=from.name.value
     
     
 
@@ -20,7 +23,9 @@ const handlerReview=(event)=>{
         email:user?.email,
         reviewName:title,
         massage,
-        photoUrl
+        photoUrl,
+        name
+
        
         
     }
@@ -55,6 +60,9 @@ const handlerReview=(event)=>{
           <h2 className="card-title">{title}</h2>
           <p>{description}</p>
         </div>
+      </div>
+      <div>
+        <ReviewAll></ReviewAll>
       </div>
       <div className="my-5">
         <form onSubmit={handlerReview}>

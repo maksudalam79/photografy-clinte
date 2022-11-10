@@ -102,6 +102,7 @@ const Login = () => {
                 >
                   <FaGoogle></FaGoogle> Log in with google
                 </button>
+                <p>Don't have an Account???<Link><button className='btn btn-xs'><small>Register</small></button></Link></p>
                 
               </div>
             </form>

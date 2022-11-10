@@ -46,7 +46,7 @@ const Myreview = () => {
                 </label>
               </th>
               <th>Name</th>
-              <th>Email & Photo</th>
+              <th>Name & Photo</th>
               <th>Massage</th>
               <th></th>
             </tr>

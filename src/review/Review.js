@@ -2,7 +2,7 @@ import React  from "react";
 import { Link } from "react-router-dom";
 
 const Review = ({ review,handlerDelete }) => {
-  const {_id, email, reviewName, massage,photoUrl } = review;
+  const {_id,name, reviewName, massage,photoUrl } = review;
 
  
   
@@ -23,7 +23,7 @@ const Review = ({ review,handlerDelete }) => {
       </td>
       <td>
         <img className="w-10" src={photoUrl} alt="" />
-        <p>{email}</p>
+        <p>{name}</p>
       </td>
       <td>{massage}</td>
       <th>
