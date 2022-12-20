@@ -2,7 +2,7 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 
 const Edit = () => {
-  const  user  = useLoaderData();
+  const user = useLoaderData();
   console.log(user);
   const handlerEdit = (event) => {
     event.preventDefault();
@@ -12,8 +12,8 @@ const Edit = () => {
     const edit = {
       massage,
     };
-    console.log(edit)
-    fetch((`http://localhost:5000/reviews/${user?._id}`), {
+    console.log(edit);
+    fetch(`https://assigment-11-server-site.vercel.app/reviews/${user?._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Addservice from "../allservice/Addservice";
 import Allservice from "../allservice/Allservice";
+import Found from "../banner/Found";
 import Blog from "../blog/Blog";
 import Deatails from "../details/Deatails";
 import Home from "../home/Home";
@@ -33,7 +34,9 @@ export const router = createBrowserRouter([
           </Private>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allservice/${params.id}`),
+          fetch(
+            `https://assigment-11-server-site.vercel.app/allservice/${params.id}`
+          ),
       },
       {
         path: "/login",
@@ -50,12 +53,16 @@ export const router = createBrowserRouter([
       {
         path: "/reviews/:id",
         element: <Edit></Edit>,
-        loader:({params})=>fetch(`http://localhost:5000/reviews/${params.id}`)
+        loader: ({ params }) =>
+          fetch(
+            `https://assigment-11-server-site.vercel.app/reviews/${params.id}`
+          ),
       },
       {
         path: "/reviews",
         element: <Allreview></Allreview>,
-        loader: () => fetch("http://localhost:5000/reviews"),
+        loader: () =>
+          fetch("https://assigment-11-server-site.vercel.app/reviews"),
       },
       {
         path: "/addservice",
@@ -64,6 +71,10 @@ export const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "*",
+        element: <Found></Found>,
       },
     ],
   },

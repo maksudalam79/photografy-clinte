@@ -5,15 +5,13 @@ import DeatilesReview from "./DeatilesReview";
 const ReviewAll = () => {
   const { loading } = useContext(AuthContext);
   const [allreviews, setReviews] = useState([loading]);
-  console.log(allreviews)
-  
+  console.log(allreviews);
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://assigment-11-server-site.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => {
-        setReviews(data)
-       
+        setReviews(data);
       });
   }, []);
   return (
